@@ -24,7 +24,7 @@ body {
   .wrapper {
     width: 95vw;
     height: 95vh;
-    position: absolute;
+    position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -39,6 +39,9 @@ body {
   float: left;
   height: 100%;
   padding: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .player-name {
@@ -53,7 +56,6 @@ body {
   font-size: 100px;
   font-weight: 100;
   color: #EB4D4D;
-  margin-bottom: 30vh;
 }
 
 .active { background-color: #f7f7f7; }
@@ -70,7 +72,7 @@ body {
 .player-current-box {
   background-color: #EB4D4D;
   color: #fff;
-  width: 25%;
+  /* width: 25%; */
   margin: 0 auto;
   padding: 12px;
   text-align: center;
@@ -85,12 +87,29 @@ body {
 .player-current-score {
   font-size: 30px;
 }
+.game-panel { 
+  position:absolute;
+  top:0;
+  flex-direction: column;
+  display: flex;
+  left: calc(50% - 175px);
+  width:350px;
+  align-items: center;
+  justify-content: space-between;
+  bottom: 0;
+  padding: 100px 0;
+}
+.bottom-buttons { 
+  display: flex;
+  flex-direction: column;
+}
 
 button {
-  position: absolute;
+  /*position: absolute;*/
   width: 200px;
   left: 50%;
-  transform: translateX(-50%);
+  padding: 6px 15px;
+  /* transform: translateX(-50%); */
   color: #555;
   background: none;
   border: none;
@@ -116,17 +135,13 @@ i {
   transition: margin 0.3s;
 }
 
-.btn-new { top: 4vh;}
+/* .btn-new { top: 4vh;}
 .btn-roll { top: 63vh;}
-.btn-hold { top: 69vh;}
+.btn-hold { top: 69vh;} */
 
 .dice {
-  position: absolute;
-  left: 50%;
-  top: 25vh;
-  transform: translateX(-50%);
   height: 100px;
-  box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.10);
+  box-shadow: 5px 10px 16px rgb(0 0 0 / 32%)
 }
 
 .winner { background-color: #f7f7f7; }

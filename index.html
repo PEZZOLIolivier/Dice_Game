@@ -30,12 +30,14 @@
   <title>Dice Game</title>
 </head>
 <body class="container-fluid text-body">
-  <div class="wrapper clearfix d-flex justify-content-center">
+  <div class="wrapper clearfix justify-content-center">
 
     <!-- First player panel -->
     <div class="player-0-panel active">
-      <div class="player-name text-uppercase text-center" id="name-0">Player 1</div>
-      <div class="player-score text-center align-middle" id="score-0">0</div>
+      <div class="player-top-panel">
+        <div class="player-name text-uppercase text-center" id="name-0">Player 1</div>
+        <div class="player-score text-center align-middle" id="score-0">0</div>
+      </div>
       <div class="player-current-box">
         <div class="player-current-label text-uppercase">Current</div>
         <div class="player-current-score" id="current-0">0</div>
@@ -44,20 +46,27 @@
 
     <!-- Second player panel -->
     <div class="player-1-panel">
-      <div class="player-name text-uppercase text-center" id="name-1">Player 2</div>
-      <div class="player-score text-center align-middle" id="score-1">0</div>
+      <div class="player-top-panel">
+        <div class="player-name text-uppercase text-center" id="name-1">Player 2</div>
+        <div class="player-score text-center align-middle" id="score-1">0</div>
+      </div>  
       <div class="player-current-box">
         <div class="player-current-label text-uppercase">Current</div>
         <div class="player-current-score" id="current-1">0</div>
       </div>
     </div>
 
+    <div class="game-panel">
     <!-- Button -->
     <button class="btn-new text-uppercase"><i class="d-inline-block align-text-top bi bi-plus-circle"></i>New game</button>
-    <button class="btn-roll text-uppercase"><i class="d-inline-block align-text-top bi bi-arrow-repeat"></i>Roll dice</button>
-    <button class="btn-hold text-uppercase"><i class="d-inline-block align-text-top bi bi-box-arrow-in-down"></i>Hold</button>
-
     <img src="images/dice-1.png" alt="Dice" class="dice">
+    <div class="bottom-buttons">
+      <button class="btn-roll text-uppercase"><i class="d-inline-block align-text-top bi bi-arrow-repeat"></i>Roll dice</button>
+      <button class="btn-hold text-uppercase"><i class="d-inline-block align-text-top bi bi-box-arrow-in-down"></i>Hold</button>
+    </div>
+  </div>
+
+   
   </div>
 
   <script 
