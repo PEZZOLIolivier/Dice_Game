@@ -38,14 +38,20 @@ body {
   width: 50%;
   float: left;
   height: 100%;
-  padding: 100px;
+  padding: 50px 100px 20vh ;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
+.player-top-panel {
+  height: 30vh;
+  flex-direction: column;
+  display: flex;
+  justify-content: space-between;
+}
 
 .player-name {
-  font-size: 40px;
+  font-size: 36px;
   font-weight: 100;
   margin-top: 20px;
   margin-bottom: 10px;
@@ -72,7 +78,7 @@ body {
 .player-current-box {
   background-color: #EB4D4D;
   color: #fff;
-  /* width: 25%; */
+  width: 50%;
   margin: 0 auto;
   padding: 12px;
   text-align: center;
@@ -97,7 +103,7 @@ body {
   align-items: center;
   justify-content: space-between;
   bottom: 0;
-  padding: 100px 0;
+  padding: 10px 50px 20vh;
 }
 .bottom-buttons { 
   display: flex;
@@ -105,11 +111,9 @@ body {
 }
 
 button {
-  /*position: absolute;*/
   width: 200px;
   left: 50%;
   padding: 6px 15px;
-  /* transform: translateX(-50%); */
   color: #555;
   background: none;
   border: none;
@@ -121,10 +125,7 @@ button {
 
 button:hover { font-weight: 600; }
 button:hover i { margin-right: 20px; }
-
-button:focus {
-  outline: none;
-}
+button:focus { outline: none; }
 
 i {
   color: #EB4D4D;
@@ -134,10 +135,6 @@ i {
   margin-top: -4px;
   transition: margin 0.3s;
 }
-
-/* .btn-new { top: 4vh;}
-.btn-roll { top: 63vh;}
-.btn-hold { top: 69vh;} */
 
 .dice {
   height: 100px;

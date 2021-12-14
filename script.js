@@ -1,10 +1,7 @@
 
 var activePlayer, scores, roundScore, gameInProgress, worker;
 
-
-
-
-// game functions
+// Game functions
 function init() {
   scores = [0, 0];
   activePlayer = 0;
@@ -12,7 +9,6 @@ function init() {
   gameInProgress = true;
 
   document.querySelector('.dice').style.display = 'none';
-
   document.getElementById('score-0').textContent = '0';
   document.getElementById('score-1').textContent = '0';
   document.getElementById('current-0').textContent = '0';
@@ -31,7 +27,7 @@ function roll() {
     if (worker) {
       worker.postMessage('dice');
     } else {
-      //fallback if browser incompatibility
+      // Fallback if browser incompatibility (For IE)
       var dice = Math.floor(Math.random() * 6) + 1;
       computeDice(dice)
     }
@@ -44,11 +40,11 @@ function computeDice(data) {
   diceDOM.style.display = 'block';
   diceDOM.src = 'images/' + 'dice-' + dice + '.png';
   if (dice !== 1) {
-    //Add score
+    // Add score
     roundScore += dice;
     document.querySelector('#current-' + activePlayer).textContent = roundScore;
   } else {
-    //Next player
+    // Next player
     nextPlayer();
   }
 
@@ -70,27 +66,25 @@ function hold() {
       document.querySelector('.player-' + activePlayer + '-panel').classList.remove('active');
       gameInProgress= false;
     } else {
-      //Next player
+      // Next player
       nextPlayer();
     }
   }
 }
 
 function nextPlayer() {
-  //Next player
+  // Next player
   activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
   roundScore = 0;
 
   document.getElementById('current-0').textContent = '0';
   document.getElementById('current-1').textContent = '0';
-
   document.querySelector('.player-0-panel').classList.toggle('active');
   document.querySelector('.player-1-panel').classList.toggle('active');
-
   document.querySelector('.dice').style.display = 'none';
 }
 
-//Worker
+// Worker
 function initWorker() {
   return new Worker("worker.js");
 }
@@ -103,7 +97,7 @@ if (window.Worker) {
 
   worker.onmessage = function (e) {
     if (gameInProgress) {
-      // receive rng dice data from worker
+      // Receive rng dice data from worker
       computeDice(e.data)
     }
   }
