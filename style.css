@@ -38,20 +38,20 @@ body {
   width: 50%;
   float: left;
   height: 100%;
-  padding: 50px 100px 20vh ;
+  padding: 5px 10px 2vh ;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 .player-top-panel {
-  height: 30vh;
+  height: 15vh;
   flex-direction: column;
   display: flex;
   justify-content: space-between;
 }
 
 .player-name {
-  font-size: 36px;
+  font-size: 24px;
   font-weight: 100;
   margin-top: 20px;
   margin-bottom: 10px;
@@ -59,7 +59,7 @@ body {
 }
 
 .player-score {
-  font-size: 100px;
+  font-size: 50px;
   font-weight: 100;
   color: #EB4D4D;
 }
@@ -69,7 +69,7 @@ body {
 
 .active .player-name::after {
   content: "\2022";
-  font-size: 40px;
+  font-size: 26px;
   position: relative;
   color: #EB4D4D;
   left: 10px;
@@ -86,24 +86,24 @@ body {
 
 .player-current-label {
   margin-bottom: 10px;
-  font-size: 16px;
+  font-size: 12px;
   color: Black;
 }
 
 .player-current-score {
-  font-size: 30px;
+  font-size: 24px;
 }
 .game-panel { 
   position:absolute;
   top:0;
   flex-direction: column;
   display: flex;
-  left: calc(50% - 175px);
-  width:350px;
+  left: calc(50% - 150px);
+  width:300px;
   align-items: center;
   justify-content: space-between;
   bottom: 0;
-  padding: 10px 50px 20vh;
+  padding: 5px 50px 2vh;
 }
 .bottom-buttons { 
   display: flex;
@@ -111,14 +111,14 @@ body {
 }
 
 button {
-  width: 200px;
+  width: 150px;
   left: 50%;
-  padding: 6px 15px;
+  padding: 3px 10px;
   color: #555;
   background: none;
   border: none;
   font-family: Lato;
-  font-size: 20px;
+  font-size: 12px;
   cursor: pointer;
   font-weight: 300;
 }
@@ -130,16 +130,99 @@ button:focus { outline: none; }
 i {
   color: #EB4D4D;
   margin-right: 15px;
-  font-size: 32px;
+  font-size: 24px;
   line-height: 1;
   margin-top: -4px;
   transition: margin 0.3s;
 }
 
 .dice {
-  height: 100px;
+  height: 75px;
   box-shadow: 5px 10px 16px rgb(0 0 0 / 32%)
 }
 
 .winner { background-color: #f7f7f7; }
 .winner .player-name { font-weight: 300; color: #EB4D4D; }
+
+@media screen and (min-height: 600px) and (orientation: landscape) {
+  .player-0-panel,
+  .player-1-panel {
+    width: 50%;
+    float: left;
+    height: 100%;
+    padding: 50px 100px 10vh ;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .player-top-panel {
+    height: 30vh;
+    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+  }
+  .player-name {
+    font-size: 36px;
+    font-weight: 100;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    position: relative;
+  }
+  .player-score {
+    font-size: 100px;
+    font-weight: 100;
+    color: #EB4D4D;
+  }
+  .active .player-name::after {
+    content: "\2022";
+    font-size: 40px;
+    position: relative;
+    color: #EB4D4D;
+    left: 10px;
+  }
+  .player-current-label {
+    margin-bottom: 10px;
+    font-size: 12px;
+    color: Black;
+  }
+  .player-current-score {
+    font-size: 30px;
+  }
+  .game-panel { 
+    position:absolute;
+    top:0;
+    flex-direction: column;
+    display: flex;
+    left: calc(50% - 175px);
+    width:350px;
+    align-items: center;
+    justify-content: space-between;
+    bottom: 0;
+    padding: 10px 50px 10vh;
+  }
+  button {
+    width: 200px;
+    left: 50%;
+    padding: 6px 15px;
+    color: #555;
+    background: none;
+    border: none;
+    font-family: Lato;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: 300;
+  }
+  i {
+    color: #EB4D4D;
+    margin-right: 15px;
+    font-size: 32px;
+    line-height: 1;
+    margin-top: -4px;
+    transition: margin 0.3s;
+  }
+  
+  .dice {
+    height: 100px;
+    box-shadow: 5px 10px 16px rgb(0 0 0 / 32%)
+  }
+}
